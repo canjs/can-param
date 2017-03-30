@@ -1,4 +1,4 @@
-@module {function} can-param param
+@module {function} can-param can-param
 @parent can-infrastructure
 @description Serialize an object or array into a query string.
 
