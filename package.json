@@ -1,6 +1,6 @@
 {
   "name": "can-param",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Serialize an array or object into a query string.",
   "homepage": "",
   "repository": {
