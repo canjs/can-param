@@ -1,5 +1,5 @@
-@module {function} can-util/js/param/param param
-@parent can-util/js
+@module {function} can-param param
+@parent can-infrastructure
 @description Serialize an object or array into a query string.
 
 @signature `param(object)`
@@ -8,7 +8,7 @@ Serializes an object or array into a query string useful for making Ajax request
 escape values and keys.
 
 ```js
-var param = require("can-util/js/param/param");
+var param = require("can-param");
 
 param({foo: "bar"})          //-> "foo=bar"
 param({foo: ["bar", "baz"]}) //-> "foo[]=bar&foo[]=baz"

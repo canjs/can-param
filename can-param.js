@@ -1,8 +1,7 @@
-var isArray = require('../is-array/is-array');
 var namespace = require("can-namespace");
 
 function buildParam(prefix, obj, add) {
-	if (isArray(obj)) {
+	if (Array.isArray(obj)) {
 		for (var i = 0, l = obj.length; i < l; ++i) {
 			add(prefix + '[]', obj[i]);
 		}
