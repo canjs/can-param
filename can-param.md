@@ -21,3 +21,12 @@ This is exported as `param` on [can-namespace].
 
 @param {Object} object An object or array.
 @return {String} The params formatted into a form-encoded string.
+
+@body
+
+## Try it
+
+Use this JS Bin to play around with this package:
+
+<a class="jsbin-embed" href="https://jsbin.com/zezamig/embed?js,console">can-param on jsbin.com</a>
+<script src="https://static.jsbin.com/js/embed.min.js?4.0.4"></script>
