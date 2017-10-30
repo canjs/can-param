@@ -1,5 +1,6 @@
 @module {function} can-param can-param
-@parent can-infrastructure
+@parent can-routing
+@collection can-infrastructure
 @package ./package.json
 @description Serialize an object or array into a query string.
 
