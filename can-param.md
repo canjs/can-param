@@ -9,7 +9,7 @@
 Serializes an object or array into a query string useful for making Ajax requests. `param` handles nested objects and arrays.  It uses `encodeURIComponent` to
 escape values and keys.
 
-```javascript
+```js
 import param from "can-param";
 
 param({foo: "bar"})          //-> "foo=bar"
