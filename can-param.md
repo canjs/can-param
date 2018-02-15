@@ -10,12 +10,12 @@ Serializes an object or array into a query string useful for making Ajax request
 escape values and keys.
 
 ```js
-var param = require("can-param");
+import param from "can-param";
 
-param({foo: "bar"})          //-> "foo=bar"
-param({foo: ["bar", "baz"]}) //-> "foo[]=bar&foo[]=baz"
-param({foo: {bar: "baz"}})    //-> "foo[bar]=baz"
-param({foo: "bar & baz"})    //-> "foo=bar+%26+baz"
+param( { foo: "bar" } );          //-> "foo=bar"
+param( { foo: [ "bar", "baz" ] } ); //-> "foo[]=bar&foo[]=baz"
+param( { foo: { bar: "baz" } } );    //-> "foo[bar]=baz"
+param( { foo: "bar & baz" } );    //-> "foo=bar+%26+baz"
 ```
 
 This is exported as `param` on [can-namespace].
