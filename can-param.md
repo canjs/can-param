@@ -20,7 +20,7 @@ param( { foo: "bar & baz" } );    //-> "foo=bar+%26+baz"
 
 This is exported as `param` on [can-namespace].
 
-@param {Object} object An object or array.
+@param {Object} object An object or array. 
 @return {String} The params formatted into a form-encoded string.
 
 @body
