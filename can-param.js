@@ -4,7 +4,10 @@ var namespace = require("can-namespace");
 function buildParam(prefix, obj, add) {
 	if (Array.isArray(obj)) {
 		for (var i = 0, l = obj.length; i < l; ++i) {
-			buildParam(prefix + '[]', obj[i], add);
+			var inner = obj[i];
+			var shouldIncludeIndex = typeof inner === 'object';
+			var arrayIndex = shouldIncludeIndex ? '[' + i + ']' : '[]';
+			buildParam(prefix + arrayIndex, inner, add);
 		}
 	} else if ( obj && typeof obj === "object" ) {
 		for (var name in obj) {
