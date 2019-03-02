@@ -5,8 +5,6 @@
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/canjs/can-param/blob/master/LICENSE.md)
 [![npm version](https://badge.fury.io/js/can-param.svg)](https://www.npmjs.com/package/can-param)
 [![Travis build status](https://travis-ci.org/canjs/can-param.svg?branch=master)](https://travis-ci.org/canjs/can-param)
-[![AppVeyor build status](https://ci.appveyor.com/api/projects/status/github/canjs/can-param?branch=master&svg=true)](https://ci.appveyor.com/project/matthewp/can-param)
-[![Coverage status](https://coveralls.io/repos/github/canjs/can-param/badge.svg?branch=master)](https://coveralls.io/github/canjs/can-param?branch=master)
 [![Greenkeeper badge](https://badges.greenkeeper.io/canjs/can-param.svg)](https://greenkeeper.io/)
 
 Serialize an array or object into a query string.
