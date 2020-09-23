@@ -10,7 +10,7 @@ Serializes an object or array into a query string useful for making Ajax request
 escape values and keys.
 
 ```js
-import param from "can-param";
+import { param } from "can";
 
 param( { foo: "bar" } );          //-> "foo=bar"
 param( { foo: [ "bar", "baz" ] } ); //-> "foo[]=bar&foo[]=baz"
@@ -27,7 +27,15 @@ This is exported as `param` on [can-namespace].
 
 ## Try it
 
-Use this JS Bin to play around with this package:
+Run the following example on CodePen to play around with this package:
 
-<a class="jsbin-embed" href="https://jsbin.com/zezamig/embed?js,console">can-param on jsbin.com</a>
-<script src="https://static.jsbin.com/js/embed.min.js?4.0.4"></script>
+```html
+<script type="module">
+import { param } from "can";
+
+var parameters = {canjs: 'awesome'};
+var queryString = param(parameters);
+console.log(queryString);
+</script>
+```
+@codepen
