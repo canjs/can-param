@@ -21,10 +21,13 @@ function buildParam(prefix, obj, add) {
 module.exports = namespace.param = function param(object) {
 	var pairs = [],
 		add = function (key, value) {
+			value = value == null ? '' : value;
 			pairs.push(encodeURIComponent(key) + '=' + encodeURIComponent(value));
 		};
 	for (var name in object) {
-		buildParam(name, object[name], add);
+		if (typeof object[name] !== 'undefined') {
+			buildParam(name, object[name], add);
+		}
 	}
 	return pairs.join('&')
 		.replace(/%20/g, '+');

@@ -12,7 +12,7 @@ QUnit.test("can-param", function(assert) {
 		age: {
 			or: [ {lte: 5}, null ]
 		}
-	}), encodeURI("age[or][0][lte]=5&age[or][1]=null"));
+	}), encodeURI("age[or][0][lte]=5&age[or][1]="));
 
 	assert.deepEqual(param({
 		"undefined": undefined,
@@ -20,7 +20,7 @@ QUnit.test("can-param", function(assert) {
 		"NaN": NaN,
 		"true": true,
 		"false": false
-	}),"undefined=undefined&null=null&NaN=NaN&true=true&false=false","true, false, undefined, etc");
+	}),"null=&NaN=NaN&true=true&false=false","true, false, undefined, etc");
 });
 
 QUnit.test("Encoding arrays of objects includes indices", function(assert) {
