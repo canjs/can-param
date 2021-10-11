@@ -2,6 +2,7 @@
 @parent can-routing
 @collection can-infrastructure
 @package ./package.json
+@group can-param.methods 0 Methods
 @description Serialize an object or array into a query string.
 
 @signature `param(object)`

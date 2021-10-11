@@ -3,7 +3,29 @@ var param = require("./can-param");
 
 QUnit.module("can-param");
 
-QUnit.test("can-param", function(assert) {
+QUnit.test("can-param -- naive mode", function(assert) {
+  assert.deepEqual( param( {foo: "bar", baz: "zed"} ), "foo=bar&baz=zed", "Regular object");
+  assert.deepEqual( param( {foo: {bar: "baz"}} ), encodeURI("foo[bar]=baz"), "Nested object");
+  assert.deepEqual( param( {foo: ["bar", "baz"]} ), encodeURI("foo[]=bar&foo[]=baz"), "Nested array");
+  assert.deepEqual( param( {foo: "bar & baz"} ), "foo=bar+%26+baz", "Spec chars values");
+  assert.equal(param({
+    age: {
+      or: [ {lte: 5}, null ]
+    }
+  }), encodeURI("age[or][0][lte]=5&age[or][1]=null"));
+
+  assert.deepEqual(param({
+    "undefined": undefined,
+    "null": null,
+    "NaN": NaN,
+    "true": true,
+    "false": false
+  }),"undefined=undefined&null=null&NaN=NaN&true=true&false=false","true, false, undefined, etc");
+});
+
+QUnit.test("can-param -- standards mode", function(assert) {
+	param.setStandardsMode(true);
+
 	assert.deepEqual( param( {foo: "bar", baz: "zed"} ), "foo=bar&baz=zed", "Regular object");
 	assert.deepEqual( param( {foo: {bar: "baz"}} ), encodeURI("foo[bar]=baz"), "Nested object");
 	assert.deepEqual( param( {foo: ["bar", "baz"]} ), encodeURI("foo[]=bar&foo[]=baz"), "Nested array");
@@ -21,6 +43,8 @@ QUnit.test("can-param", function(assert) {
 		"true": true,
 		"false": false
 	}),"null=&NaN=NaN&true=true&false=false","true, false, undefined, etc");
+
+	param.setStandardsMode(false);
 });
 
 QUnit.test("Encoding arrays of objects includes indices", function(assert) {
